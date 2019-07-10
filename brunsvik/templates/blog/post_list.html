@@ -1,12 +1,29 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Brunsvik</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Brunsvik's configurations</a></h1>
-            <h2><a href="">Выберете часть проги</a></h2>
-            <p>Aenean eu leo quam.</p>
-        </div>
-    </body>
+	<head>
+		<title>Эффекты Брунсвика</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<center>
+			<header>
+				<h1>Оценки экспрессий лица по эффектам Брунсвика</h1>
+			</header>
+
+			<form>
+				<div>
+					<label>Выберите фото в формате .png</label>
+					<input type="file" multiple accept="image/png">
+				</div>
+
+				<div>
+					<button type="submit" onclick="alert('Спасибо');">Оценка лица на экспрессии радости/грусти</button>
+					<button type="submit" onclick="">Оценка лица на различные виды эмоций</button>
+				</div>
+			</form>
+		</center>
+
+	</body>
 </html>

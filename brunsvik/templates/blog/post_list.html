@@ -3,7 +3,175 @@
 	<head>
 		<title>Эффекты Брунсвика</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+
+        <style type="text/css">
+            :-moz-placeholder {
+			    color: #7e7e7e;
+			}
+
+			::-webkit-input-placeholder {
+			    color: #7e7e7e;
+			}
+
+			* {
+			    margin: 0;
+			    padding: 0;
+
+			    font-family: monospace;
+			}
+
+			body {
+			    width: 100%;
+			    height: auto;
+			    background-color: #37393c;
+			    font-size: 1em;
+			}
+
+			img {
+			    max-width: 100%;
+			    height: auto;
+			}
+
+			div {
+			    clear: both;
+			    padding: 8px 0;
+			    overflow: hidden;
+			}
+
+			form {
+			    width : 50%;
+			    margin-left : 25%;
+			    margin-top: 50px;
+			    float: left;
+
+			    padding: 20px;
+
+			    font-size: 13px;
+			    display: inline-block;
+				background-color: #37393c;
+			    color: white;
+
+			}
+
+			label {
+			    color: rgb(255, 255, 255);
+			}
+
+			header {
+			    color: rgb(255, 255, 255);
+			    margin-right: 7px;
+			    width: auto;
+			}
+
+			input {
+			    display: inline-block;
+			    width: 250px;
+			    height: 18px;
+			    padding: 4px;
+			    line-height: 18px;
+			    color: #efefef;
+			    border: 1px solid #a4a4a4;
+				background-color: #202223;
+				-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+				-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+				-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+				-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+				transition: border linear 0.2s, box-shadow linear 0.2s;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+			}
+
+			input:focus {
+			    border: 1px solid #97b7d9;
+			    outline: none;
+				-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(151, 183, 217, 0.6);
+				-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(151, 183, 217, 0.6);
+				box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(151, 183, 217, 0.6);
+			}
+
+			button {
+			    display: inline-block;
+			    width: auto;
+			    height: auto;
+				background-color: #3d6182;
+			    background-repeat: repeat-x;
+			    background-image: -khtml-gradient(linear, left top, left bottom, from(#8db7dd), to(#3d6182));
+			    background-image: -moz-linear-gradient(top, #8db7dd, #3d6182);
+			    background-image: -ms-linear-gradient(top, #8db7dd, #3d6182);
+			    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8db7dd), color-stop(100%, #3d6182));
+			    background-image: -webkit-linear-gradient(top, #8db7dd, #3d6182);
+			    background-image: -o-linear-gradient(top, #8db7dd, #3d6182);
+			    background-image: linear-gradient(top, #8db7dd, #3d6182);
+			    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8db7dd', endColorstr='#3d6182', GradientType=0);
+			    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+			    border: 1px solid #19252f;
+			    padding: 8px 17px 9px;
+			    color: white;
+			    cursor: pointer;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+			    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+			    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+			    -webkit-transition: 0.1s linear all;
+			    -moz-transition: 0.1s linear all;
+			    -ms-transition: 0.1s linear all;
+			    -o-transition: 0.1s linear all;
+			    transition: 0.1s linear all;
+			}
+
+			input[type=file] {
+				background-color: #37393c;
+			    height: 27px;
+			    border: none;
+			    margin-left: auto;
+			}
+
+			input[type=file]:focus, input[type=checkbox]:focus, select:focus {
+			    outline: 1px dotted #666;
+			}
+
+			input[disabled] {
+			    background-color: #343536;
+			    border-color: #585858;
+			    cursor: not-allowed;
+			}
+
+			button::-moz-focus-inner, input::-moz-focus-inner {
+			    border: 0;
+			    padding: 0;
+			}
+
+			ul {
+			    list-style: none;
+			    margin: 0;
+			    padding: 0;
+			    padding-top: 6px;
+			    float: left;
+			}
+
+			ul li {
+			    display: block;
+			    width: 100%;
+			    clear: both;
+			    margin: 0;
+			}
+
+			ul li label {
+			    float: none;
+			    padding: 0;
+			    width: auto;
+			    margin: 0 0 0 8px;
+				color: #efefef;
+			}
+        </style>
+
+
+
+
 	</head>
 
 	<body>
